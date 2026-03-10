@@ -9,10 +9,20 @@ function Header() {
             </div>
 
             <nav className={styles.headerNav}>
-                <a>About</a>
-                <a>Projects</a>
-                <a>Skills</a>
-                <a>Contact</a>
+                <ul>
+                    <li>
+                        <a><span className={styles.indicators}></span><span className={styles.sectionNames}>ABOUT</span></a>
+                    </li>
+                    <li>
+                        <a><span className={styles.indicators}></span><span className={styles.sectionNames}>PROJECTS</span></a>
+                    </li>
+                    <li>
+                        <a><span className={styles.indicators}></span><span className={styles.sectionNames}>SKILLS</span></a>
+                    </li>
+                    <li>
+                        <a><span className={styles.indicators}></span><span className={styles.sectionNames}>CONTACT</span></a>
+                    </li>
+                </ul>
             </nav>
 
             <div className={styles.headerSocials}>
