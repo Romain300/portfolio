@@ -1,5 +1,45 @@
 import styles from "../../styles/layout.module.css";
+import { useState } from "react";
 function Header() {
+    
+    const [navs, setNavs] = useState([
+        {
+            name: "ABOUT",
+            idSection: "#about",
+            id: 1,
+            selected: false
+        },
+        {
+            name: "EXPERIENCE",
+            idSection: "#experience",
+            id: 2,
+            selected: false
+        },
+        {
+            name: "PROJECTS",
+            id: 3,
+            idSection: "#projects",
+            selected: false
+        },
+        {
+            name: "CONTACT",
+            id: 4,
+            idSection: "#contact",
+            selected: false
+        },
+
+    ]);
+
+    const onClick = (id) => {
+        setNavs(prev => 
+            prev.map(nav => 
+                nav.id === id
+                    ? { ...nav, selected: true }
+                    : { ...nav, selected: false }
+            )
+        );
+    };
+
     return (
         <header>
             <div className={styles.headerTop}>
@@ -10,19 +50,13 @@ function Header() {
 
             <nav className={styles.headerNav}>
                 <ul>
-                    <li>
-                        <a><span className={styles.indicators}></span><span className={styles.sectionNames}>ABOUT</span></a>
-                    </li>
-                    <li>
-                        <a><span className={styles.indicators}></span><span className={styles.sectionNames}>PROJECTS</span></a>
-                    </li>
-                    <li>
-                        <a><span className={styles.indicators}></span><span className={styles.sectionNames}>SKILLS</span></a>
-                    </li>
-                    <li>
-                        <a><span className={styles.indicators}></span><span className={styles.sectionNames}>CONTACT</span></a>
-                    </li>
+                    {navs.map((nav) => (
+                        <li className={nav.selected === false ? styles.unselected : styles.selected} key={nav.id} onClick={() => onClick(nav.id)}>
+                             <a href={nav.idSection}><span className={styles.indicators}></span><span className={styles.sectionNames}>{nav.name}</span></a>
+                        </li>
+                    ))}
                 </ul>
+                
             </nav>
 
             <div className={styles.headerSocials}>
@@ -69,3 +103,5 @@ function Header() {
 };
 
 export default Header;
+
+//add scrolls nav selection

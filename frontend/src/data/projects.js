@@ -1,5 +1,6 @@
 const projects = [
   {
+    id: "1",
     title: "PixTag",
     description:
       "An interactive web-based game where players find hidden characters and compete for the fastest completion time.",
@@ -23,13 +24,16 @@ const projects = [
       "REST API backend"
     ],
     github: "https://github.com/Romain300/Photo-Tagging-App",
-    live: "https://pixtag.netlify.app/",
-    image: "/images/pixtag.png",
+    live: {
+      main: "https://pixtag.netlify.app/",
+    },
+    image: "images/pixtagApp.png",
     category: "Full-Stack",
     highlight: true
   },
 
   {
+    id: "2",
     title: "Full-Stack Blog Platform",
     description:
       "A blog platform with a public site and admin dashboard for managing posts and comments.",
@@ -56,12 +60,13 @@ const projects = [
       public: "https://romain300-blog-public.netlify.app/",
       admin: "https://romain300-blog-admin.netlify.app/"
     },
-    image: "/images/blog-project.png",
+    image: "images/blogPic.png",
     category: "Full-Stack",
     highlight: false
   },
 
   {
+    id: "3",
     title: "Resume Builder Web App",
     description:
       "Create, preview, and download professional resumes as PDFs in real time.",
@@ -83,8 +88,10 @@ const projects = [
       "Support for social links"
     ],
     github: "https://github.com/Romain300/CV-Application",
-    live: "https://resume-builderromain300.netlify.app/",
-    image: "/images/resume-builder.png",
+    live: {
+      main:"https://resume-builderromain300.netlify.app/"
+    },
+    image: "images/resumeApp.png",
     category: "Frontend",
     highlight: false
   }
