@@ -14,5 +14,19 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
     gap: 0.5rem;
-   
+}
+
+.resumeProjectsLink {
+  color: #cbd5e1;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s all ease-in-out;
+  font-size: 0.5rem;
+  margin-top: 1rem;
+}
+
+.resumeProjectsLink:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  transform: translateX(3px);
 }

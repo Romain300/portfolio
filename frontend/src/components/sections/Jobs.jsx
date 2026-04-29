@@ -8,6 +8,15 @@ function Jobs() {
             {jobs.map((job) => (
                 <CardJob job={job} key={job.id} />
             ))}
+
+            <a 
+                className={styles.resumeProjectsLink} 
+                href="resume.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                View Full CV
+            </a>
         </section>
     )
 };

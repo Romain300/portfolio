@@ -2,42 +2,28 @@ import styles from "../../styles/layout.module.css";
 import { useState } from "react";
 function Header() {
     
-    const [navs, setNavs] = useState([
+    const navs = [
         {
             name: "ABOUT",
             idSection: "#about",
             id: 1,
-            selected: false
         },
         {
             name: "EXPERIENCE",
             idSection: "#experience",
             id: 2,
-            selected: false
         },
         {
             name: "PROJECTS",
             id: 3,
             idSection: "#projects",
-            selected: false
         },
-        {
-            name: "CONTACT",
-            id: 4,
-            idSection: "#contact",
-            selected: false
-        },
+    ]
 
-    ]);
+    const [activeId, setActiveId] = useState(null);
 
     const onClick = (id) => {
-        setNavs(prev => 
-            prev.map(nav => 
-                nav.id === id
-                    ? { ...nav, selected: true }
-                    : { ...nav, selected: false }
-            )
-        );
+        setActiveId(id);
     };
 
     return (
@@ -51,7 +37,7 @@ function Header() {
             <nav className={styles.headerNav}>
                 <ul>
                     {navs.map((nav) => (
-                        <li className={nav.selected === false ? styles.unselected : styles.selected} key={nav.id} onClick={() => onClick(nav.id)}>
+                        <li className={nav.id === activeId ? styles.selected : styles.unselected} key={nav.id} onClick={() => onClick(nav.id)}>
                              <a href={nav.idSection}><span className={styles.indicators}></span><span className={styles.sectionNames}>{nav.name}</span></a>
                         </li>
                     ))}
@@ -104,4 +90,4 @@ function Header() {
 
 export default Header;
 
-//add scrolls nav selection
+//add scrolls nav selection with IntersectionObserver

@@ -8,8 +8,18 @@ function Projects() {
             {projects.map((project) => (
                 <CardProject key={project.id} project={project} />
             ))}
+
+            <a
+                className={styles.resumeProjectsLink}
+                target="_blank"
+                rel="noopener norefferer"
+            >
+                Full Project Collection
+            </a>
         </section>
     )
 };
 
 export default Projects;
+
+//add project archives with routes, route and browserrouter
