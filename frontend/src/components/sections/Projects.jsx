@@ -1,6 +1,7 @@
 import CardProject from "../ui/CardProject";
 import projects from "../../data/projects";
 import styles from "../../styles/sections.module.css";
+import { Link } from "react-router-dom";
 
 function Projects() {
     return (
@@ -9,12 +10,12 @@ function Projects() {
                 <CardProject key={project.id} project={project} />
             ))}
 
-            <a
+            <Link
                 className={styles.resumeProjectsLink}
-                href="/collection"
+                to="/collection"
             >
                 Full Project Collection
-            </a>
+            </Link>
         </section>
     )
 };
