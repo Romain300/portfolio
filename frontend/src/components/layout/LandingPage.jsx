@@ -2,7 +2,7 @@ import Header from "./Header";
 import Main from "./Main";
 import styles from "../../styles/layout.module.css";
 
-function Layout() {
+function LandingPage() {
     return (
         <div className={styles.layout}>
             <Header />
@@ -11,4 +11,4 @@ function Layout() {
     )
 };
 
-export default Layout;
+export default LandingPage;

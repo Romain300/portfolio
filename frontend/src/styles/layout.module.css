@@ -6,8 +6,8 @@
 
 .linkedinIcon,
 .gitIcon {
-    width: 1rem;
-    height: 1rem;
+    width: 2.3rem;
+    height: 2.3rem;
 }
 
 .layout {
@@ -15,7 +15,15 @@
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    padding: 0rem 9rem;
+    padding: 0 1rem
+}
+
+.layoutProjectPage {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3rem 1rem
+
 }
 
 header {
@@ -26,14 +34,15 @@ header {
     position: sticky;
     top: 0;
     padding: 3rem 0rem;
-    
 }
 
 main {
     width: 50%;
     padding: 3rem 0rem;
+}
 
-    
+.headerNav {
+    margin-top: 2rem;
 }
 
 ul {
@@ -41,10 +50,16 @@ ul {
     list-style: none;
 }
 
+.headerNav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .indicators {
     display: inline-block;
     background-color: #38bdf8;
-    width: 15px;
+    width: 2rem;
     height: 1px;
     transition: all 100ms ease-in-out;
 }
@@ -56,32 +71,71 @@ a {
     width: fit-content;
     cursor: pointer;
     text-decoration-line: none;
+    font-size: 1rem;
 }
 
 .unselected:hover .indicators,
 .selected .indicators {
-    transform: scaleX(1.5);
+    transform: scaleX(2);
     transform-origin: left;
 }
 
+.unselected, .selected {
+    margin-top: 0.2rem;
+    font-size: 1.05rem;
+} 
 
 .unselected:hover .sectionNames,
 .selected .sectionNames {
-    transform: translateX(8px); 
+    transform: translateX(2rem); 
 }
 
 .sectionNames {
     transition: all 100ms ease-in-out;
+    font-size: 0.9rem;
 }
 
 .headerSocials {
     margin-top: auto;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .headerTop {
     display: flex;
     gap: 0.3rem;
     flex-direction: column;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 1000px) {
+    .layout {
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+
+    header {
+        height: auto;
+        position: static;
+        gap: 1.7rem;
+        width: auto;
+    }
+
+    .linkedinIcon,
+    .gitIcon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .headerNav {
+        margin: 0;
+    }
+
+    main {
+        width: 50%;
+        padding-top: 0;
+        padding-bottom: 3rem;
+        width: auto;
+    }
+
 }

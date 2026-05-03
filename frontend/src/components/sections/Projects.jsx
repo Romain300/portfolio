@@ -5,14 +5,13 @@ import styles from "../../styles/sections.module.css";
 function Projects() {
     return (
         <section id="projects" className={styles.projects}>
-            {projects.map((project) => (
+            {projects.slice(0,4).map((project) => (
                 <CardProject key={project.id} project={project} />
             ))}
 
             <a
                 className={styles.resumeProjectsLink}
-                target="_blank"
-                rel="noopener norefferer"
+                href="/collection"
             >
                 Full Project Collection
             </a>
